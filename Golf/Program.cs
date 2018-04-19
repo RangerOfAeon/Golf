@@ -13,6 +13,7 @@ namespace Golf
         public static int Goal = 0;
         
         
+        
         public static void Main(string[] args)
         {
             Swing swing = new Swing();
@@ -20,13 +21,15 @@ namespace Golf
             while (Ball != Goal)
             {
                 Console.Clear();
+                cup.TooMany();
+                cup.Edge();
                 cup.Show();
                 swing.Hit();
                 swing.Power();
                 swing.Dist();
+                cup.AddSwing();
             }
-            Console.WriteLine("\nYou Won!");
-            Console.ReadKey();
+            cup.ShowSwings();
         }
     }
 }

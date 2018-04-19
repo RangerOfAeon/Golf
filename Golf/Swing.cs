@@ -10,7 +10,7 @@ namespace Golf
     {
         //Program program = new Program();
         Cup cup = new Cup();
-
+        
         double Angle;
         double OutVelo;
 
@@ -68,20 +68,20 @@ namespace Golf
         public void Dist()
         {
             double Distance = Math.Pow(OutVelo, 2) / 9.8 * Math.Sin(2 * Angle);
-            double OutDistance = Math.Round(Distance);
+            Cup.OutDist = Math.Round(Distance);
 
             if (Program.Ball < Program.Goal)
             { 
-                Program.Ball = Program.Ball + OutDistance;
-                Console.WriteLine("\nYour ball went: " + OutDistance + " Meters.");
+                Program.Ball = Program.Ball + Cup.OutDist;
+                Console.WriteLine("\nYour ball went: " + Cup.OutDist + " Meters.");
                 Console.WriteLine("\nYou have: " + Program.Ball + " meters to the cup.");
                 Cup.Count = Cup.Count + 1;
                 Console.ReadKey();
             }
             else if(Program.Ball > Program.Goal)
             {
-                Program.Ball = Program.Ball - OutDistance;
-                Console.WriteLine("\nYour ball went: " + OutDistance + " Meters.");
+                Program.Ball = Program.Ball - Cup.OutDist;
+                Console.WriteLine("\nYour ball went: " + Cup.OutDist + " Meters.");
                 Console.WriteLine("\nYou have: " + Program.Ball + " meters to the cup.");
                 Cup.Count = Cup.Count + 1;
                 Console.ReadKey();
